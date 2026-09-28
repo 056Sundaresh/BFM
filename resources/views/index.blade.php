@@ -931,8 +931,9 @@
         </div>
       @endif
 
-      <form method="POST" action="{{ route('demo.submit') }}" novalidate style ="{{ session('success') ? 'display: none;' : '' }}">
-
+      
+      @if (!session('success'))
+      <form method="POST" action="{{ route('demo.submit') }}" novalidate>
         <div class="form-grid">
 
           <label class="field">
@@ -1142,6 +1143,7 @@
         @csrf
 
       </form>
+      @endif
 
 
       <div class="success {{ session('success') ? 'show' : '' }}">

@@ -8,3 +8,4 @@ Route::get('/', function () {
 });
 
 Route::post('/', [bookafree::class, 'submitform'])->name('demo.submit');
+
